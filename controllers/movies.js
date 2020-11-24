@@ -73,7 +73,12 @@ module.exports = {
     getComments: async (req,res,next)=>{
         try{
             const {movieId} = req.query         
-            const filterById = movieId?{where:{movieId}}:{}
+            const filterById = movieId?{
+                attributes:['movieId','comment','createdAt'],
+                where:{movieId}
+            }:{
+                attributes:['movieId','comment','createdAt']
+            }
             await Comment.findAll(filterById)
             .then(comments=>{
                 if(comments.length!==0) res.status(200).json({message:'Success',data:comments})
