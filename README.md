@@ -33,7 +33,10 @@ POST /comments:
 http://176.107.131.27:6000/comments
 
 (movieId i comment wymagane w body)
-movieId:32b1dd98-f6de-43fc-84d6-badb577ae375,comment:'new comment'
+
+movieId:32b1dd98-f6de-43fc-84d6-badb577ae375
+
+comment:'new comment'
 
 GET /comments: 
 
